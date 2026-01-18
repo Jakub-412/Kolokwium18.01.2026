@@ -1,0 +1,24 @@
+#include <stdio.h>
+int process_number(int n){
+    int licznik = 0;
+
+    while(n > 1){
+        int reszta = n % 3;
+        if (reszta == 0){
+            n /= 3;
+        }else if(reszta == 1){
+            n += 5;
+        }else{
+            n -= 1;
+        }
+        licznik ++;
+    }
+    return licznik;
+}
+int main(){
+    int n;
+    if(scanf("%d", &n) == 1 && n > 0){
+        printf("%d\n", process_number(n));
+    }
+    return 0;
+}
